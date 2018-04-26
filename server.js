@@ -5,8 +5,10 @@ const { makeExecutableSchema } = require("graphql-tools");
 const cors = require("cors");
 const path = require('path');
 
-const PORT = process.env.PORT || 3001;
-const HOST = process.env.HOST || "localhost";
+//const PORT = process.env.PORT || 3001;
+const PORT = 3001;
+//const HOST = process.env.HOST || "localhost";
+const HOST = "localhost"
 
 // GraphQL type definition
 // Query type has a top level field called planet, which is of type String
@@ -33,16 +35,14 @@ const server = express();
 
 server.use(cors());
 
-server.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+//server.use(express.static('build'))
 
 // Connect schema to an HTTP server, in the route /graphql
 server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
 
 // Provide an interactive GraphQL explorer called GraphiQL in the /graphiql route
 server.use(
-  "/",
+  "/graphiql",
   graphiqlExpress({
     endpointURL: "/graphql"
   })
