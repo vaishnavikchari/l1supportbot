@@ -12,7 +12,9 @@
       "^build/"
     ],
     "include": [
-      "\\.json"
+      "\\.json",
+      "server.js",
+      "^src/"
     ]
   },
   "throttle": 100

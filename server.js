@@ -6,7 +6,7 @@ const cors = require("cors");
 const path = require('path');
 
 const PORT = process.env.PORT || 3001;
-const HOST = process.env.PROJECT_DOMAIN || "localhost";
+const HOST = process.env.HOST || "localhost";
 
 // GraphQL type definition
 // Query type has a top level field called planet, which is of type String
