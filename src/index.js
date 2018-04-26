@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import fetch from "unfetch";
 
-const API_URL = "https://hello-world-graphql.glitch.me"
+const API_URL = ""
 
 class Greet extends Component {
   render() {

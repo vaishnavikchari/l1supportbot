@@ -5,6 +5,7 @@ const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { SubscriptionServer } = require("subscriptions-transport-ws");
 const { execute, subscribe } = require("graphql");
 const { createServer } = require("http");
+const path = require('path');
 
 const { schema } = require("./schema");
 
@@ -18,6 +19,11 @@ class Server {
     server.use(cors());
 
     server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
+    
+    server.get('/', function (req, res) {
+      console.log(path.join("../", __dirname, 'build', 'index.html'))
+      res.sendFile(path.join("../", __dirname, 'build', 'index.html'));
+    });
 
     server.use(
       "/graphiql",
