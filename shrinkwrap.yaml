@@ -4,6 +4,7 @@ dependencies:
   concurrently: 3.5.1
   cors: 2.8.4
   express: 4.16.3
+  fb-watchman: 2.0.0
   graphql: 0.13.2
   graphql-postgres-subscriptions: 1.0.1
   graphql-tools: 2.24.0
@@ -8849,6 +8850,7 @@ specifiers:
   concurrently: ^3.5.1
   cors: ^2.8.4
   express: ^4.16.3
+  fb-watchman: ^2.0.0
   graphql: ^0.13.2
   graphql-postgres-subscriptions: ^1.0.1
   graphql-tools: ^2.24.0
