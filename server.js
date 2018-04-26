@@ -3,11 +3,8 @@ const bodyParser = require("body-parser");
 const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { makeExecutableSchema } = require("graphql-tools");
 const cors = require("cors");
-const path = require('path');
 
-//const PORT = process.env.PORT || 3001;
 const PORT = 3001;
-//const HOST = process.env.HOST || "localhost";
 const HOST = "localhost"
 
 // GraphQL type definition
@@ -34,8 +31,6 @@ const schema = makeExecutableSchema({
 const server = express();
 
 server.use(cors());
-
-//server.use(express.static('build'))
 
 // Connect schema to an HTTP server, in the route /graphql
 server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));

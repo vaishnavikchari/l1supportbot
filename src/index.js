@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import fetch from "unfetch";
 
-//const API_URL = "https://gamy-ad.glitch.me"
+// package.json proxy value will replace this with the API URL
 const API_URL = ""
 
 class Greet extends Component {
@@ -12,7 +12,10 @@ class Greet extends Component {
 }
 
 export default class App extends Component {
-  state = { to: "" };
+  constructor() {
+    super();
+    this.state = { to: "" }
+  }
   componentDidMount() {
     fetch(`${API_URL}/graphql`, {
       method: "POST",
