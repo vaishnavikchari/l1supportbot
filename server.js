@@ -39,7 +39,7 @@ server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
 server.use(
   "/graphiql",
   graphiqlExpress({
-    endpointURL: "/graphql"
+    endpointURL: "/graphql.html"
   })
 );
 
