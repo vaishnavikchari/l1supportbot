@@ -4,10 +4,11 @@ const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { makeExecutableSchema } = require("graphql-tools");
 const cors = require("cors");
 
-const PORT = 3001;
-const HOST = "localhost"
+const PORT = process.env.PORT || 3001;
+const HOST = process.env.PROJECT_DOMAIN || "localhost"
 
-require("react-scripts/scripts/start")
+//require("react-scripts/scripts/start")
+require("./start")
 
 // GraphQL type definition
 // Query type has a top level field called planet, which is of type String
@@ -41,7 +42,7 @@ server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
 server.use(
   "/graphiql",
   graphiqlExpress({
-    endpointURL: "/graphql.html"
+    endpointURL: "/graphql"
   })
 );
 
