@@ -3,9 +3,10 @@ const bodyParser = require("body-parser");
 const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { makeExecutableSchema } = require("graphql-tools");
 const cors = require("cors");
+const path = require('path');
 
-const PORT = 3001;
-const HOST = "localhost"
+const PORT = process.env.PORT || 3001;
+const HOST = process.env.PROJECT_DOMAIN || "localhost"
 
 // GraphQL type definition
 // Query type has a top level field called planet, which is of type String
@@ -31,6 +32,13 @@ const schema = makeExecutableSchema({
 const server = express();
 
 server.use(cors());
+
+// https://dev.to/loujaybee/using-create-react-app-with-express
+server.use(express.static(path.join(__dirname, 'build')));
+
+server.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Connect schema to an HTTP server, in the route /graphql
 server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
