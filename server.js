@@ -7,6 +7,8 @@ const cors = require("cors");
 const PORT = 3001;
 const HOST = "localhost"
 
+require("react-scripts/scripts/start")
+
 // GraphQL type definition
 // Query type has a top level field called planet, which is of type String
 const typeDefs = `

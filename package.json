@@ -23,10 +23,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "concurrently 'react-scripts start' 'node server.js'",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "homepage": "http://localhost:3000/app"
 }
