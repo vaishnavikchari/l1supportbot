@@ -1,14 +1,11 @@
-# Hello World GraphQL
+# How to communicate a React app to a Node API in the same repository
 
-Hello World GraphQL client and server
+* Frontend bootstrapped with Create React App in /
+* Node API in /graphql
+* GraphiQL in /graphiql
 
-## Client
+## Caveats
 
-* Made in React
-* Bootstrapped with `create-react-app`
-* Communicates with server sending queries with `fetch`
+It takes too long to live reload. This is because we build the frontend every time there is a change.
 
-## Server
-
-* Made in NodeJS
-* Uses Apollo Server framework
+Another version of this project served react app using `react-scripts start` instead. This resulted in faster update times, but it had its own issues. API and GraphiQL were not accesible in a public URL, only in localhost.
