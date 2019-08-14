@@ -61,13 +61,14 @@ const steps=[
         if (isNaN(value)) {
           return 'value should be a number';
         }
-        return true;
+        return true
       },
+      message: "ok, once more..",
       trigger: '1',
     },
   ]
 
-/*render(
+render(
   <div>
   <ThemeProvider theme={themeset}>
     <ChatBot steps={steps} />
@@ -75,4 +76,4 @@ const steps=[
   
   </div>,
   document.getElementById('root')
-);*/
+);
