@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import fetch from "unfetch";
+/*import fetch from "unfetch";
 
 // package.json proxy value will replace this with the API URL
 const API_URL = ""
@@ -30,4 +30,25 @@ export default class App extends Component {
   }
 }
 
-render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));*/
+
+import ChatBot from 'react-simple-chatbot';
+/*const steps = [
+  {
+    id: '0',
+    message: 'Welcome to react chatbot!',
+    trigger: '1',
+  },
+  {
+    id: '1',
+    message: 'Bye!',
+    end: true,
+  },
+];
+ 
+render(
+  <div>
+    <ChatBot steps={steps} />
+  </div>,
+  document.getElementById('root')
+);
