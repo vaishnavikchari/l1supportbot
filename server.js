@@ -40,6 +40,10 @@ server.get('/chat', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+server.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 // Connect schema to an HTTP server, in the route /graphql
 server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
 

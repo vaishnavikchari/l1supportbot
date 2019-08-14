@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import { render } from "react-dom";
-/*import fetch from "unfetch";
-
+import fetch from "unfetch";
+import ChatBot, {Components} from 'react-simple-chatbot';
+import { ThemeProvider } from 'styled-components';
 // package.json proxy value will replace this with the API URL
 const API_URL = ""
 
@@ -30,10 +31,9 @@ export default class App extends Component {
   }
 }
 
-render(<App />, document.getElementById("root"));*/
+render(<App />, document.getElementById("root"));
 
-import ChatBot, {Components} from 'react-simple-chatbot';
-import { ThemeProvider } from 'styled-components';
+
 
 //import ChatBot from '../../lib/index';
 const themeset = {
