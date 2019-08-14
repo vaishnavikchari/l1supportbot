@@ -36,7 +36,7 @@ server.use(cors());
 // https://dev.to/loujaybee/using-create-react-app-with-express
 server.use(express.static(path.join(__dirname, 'build')));
 
-server.get('/', function (req, res) {
+server.get('/chat', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
