@@ -15,7 +15,7 @@ const typeDefs = `
 `;
 
 // Resolvers map GraphQL types (like planet) to functions
-// Every time a consumer asks for the planet key, we will return the string "world"
+// Every time a consumer asks for the planet key, we will return the string "globe"
 const resolvers = {
   Query: {
     planet: () => {
