@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { render } from "react-dom";
 /*import fetch from "unfetch";
 
@@ -33,30 +33,33 @@ export default class App extends Component {
 render(<App />, document.getElementById("root"));*/
 
 import ChatBot from 'react-simple-chatbot';
-/*const steps = [
-  {
-    id: '0',
-    message: 'Welcome to react chatbot!',
-    trigger: '1',
-  },
+import { ThemeProvider } from 'styled-components';
+//import ChatBot from '../../lib/index';
+const theme = {
+  background: '#f5f8fb',
+  fontFamily: 'Helvetica Neue',
+  headerBgColor: '#EF6C00',
+  headerFontColor: '#fff',
+  headerFontSize: '15px',
+  botBubbleColor: '#EF6C00',
+  botFontColor: '#fff',
+  userBubbleColor: '#fff',
+  userFontColor: '#4a4a4a',
+};
+
+const steps = [
   {
     id: '1',
-    message: 'Bye!',
+    message: 'Hello World',
     end: true,
   },
-];*/
+];
  
 render(
   <div>
-    <ChatBot
-  steps={[
-    {
-      id: 'hello-world',
-      message: 'Hello World!',
-      end: true,
-    },
-  ]}
-/>
+  
+    <ChatBot steps={steps} />;
+  
   </div>,
   document.getElementById('root')
 );
