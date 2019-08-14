@@ -20,7 +20,8 @@
     "react-dom": "16.3.2",
     "react-scripts": "1.1.4",
     "subscriptions-transport-ws": "^0.9.8",
-    "unfetch": "3.0.0"
+    "unfetch": "3.0.0",
+    "react-simple-chatbot": "^0.6.1"
   },
   "scripts": {
     "start": "react-scripts build && node server.js",
