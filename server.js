@@ -19,7 +19,7 @@ const typeDefs = `
 const resolvers = {
   Query: {
     planet: () => {
-      return "world";
+      return "globe";
     }
   }
 };
