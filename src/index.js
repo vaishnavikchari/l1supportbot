@@ -48,20 +48,26 @@ const themeset = {
   userFontColor: '#4a4a4a',
 };
 
-const steps = [
-  {
-    id: '0',
-    message: 'Welcome to react chatbot!',
-    trigger: '1',
-  },
-  {
-    id: '1',
-    message: 'Bye!',
-    end: true,
-  },
-];
+const steps=[
+    {
+      id: '1',
+      message: 'Please type a number',
+      trigger: '2',
+    },
+    {
+      id: '2',
+      user: true,
+      validator: (value) => {
+        if (isNaN(value)) {
+          return 'value should be a number';
+        }
+        return true;
+      },
+      trigger: '1',
+    },
+  ]
 
-render(
+/*render(
   <div>
   <ThemeProvider theme={themeset}>
     <ChatBot steps={steps} />
@@ -69,4 +75,4 @@ render(
   
   </div>,
   document.getElementById('root')
-);
+);*/
