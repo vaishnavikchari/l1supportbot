@@ -32,12 +32,13 @@ export default class App extends Component {
 
 render(<App />, document.getElementById("root"));*/
 
-import ChatBot from 'react-simple-chatbot';
+import ChatBot, {Components} from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+
 //import ChatBot from '../../lib/index';
-const theme = {
+const themeset = {
   background: '#f5f8fb',
-  fontFamily: 'Helvetica Neue',
+  fontFamily: 'Arial',
   headerBgColor: '#EF6C00',
   headerFontColor: '#fff',
   headerFontSize: '15px',
@@ -49,16 +50,26 @@ const theme = {
 
 const steps = [
   {
+    id: '0',
+    message: 'Welcome to react chatbot!',
+    trigger: '1',
+  },
+  {
     id: '1',
-    message: 'Hello World',
+    message: 'Bye!',
     end: true,
   },
 ];
- 
+
+
+  
+
+
 render(
   <div>
-  
+  <ThemeProvider theme={themeset}>
     <ChatBot steps={steps} />;
+  </ThemeProvider>
   
   </div>,
   document.getElementById('root')
