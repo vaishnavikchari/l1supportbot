@@ -44,11 +44,19 @@ import ChatBot from 'react-simple-chatbot';
     message: 'Bye!',
     end: true,
   },
-];
+];*/
  
 render(
   <div>
-    <ChatBot steps={steps} />
+    <ChatBot
+  steps={[
+    {
+      id: 'hello-world',
+      message: 'Hello World!',
+      end: true,
+    },
+  ]}
+/>
   </div>,
   document.getElementById('root')
 );
