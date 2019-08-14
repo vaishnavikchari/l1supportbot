@@ -27,7 +27,30 @@ export default class App extends Component {
       .then(res => this.setState({ to: res.data.planet }));
   }
   render() {
-    return <Greet to={this.state.to} />;
+    return <div>
+        <ThemeProvider theme={themeset}>
+          <ChatBot steps={[
+            {
+              id: '1',
+              message: 'What is your name?',
+              trigger: '2',
+            },
+            {
+              id: '2',
+              user: true,
+              trigger: '3',
+            },
+            {
+              id: '3',
+              message: "Hi {previousValue}",
+              end: true,
+            },
+          ]} />
+      </ThemeProvider>
+  
+  </div>,
+  document.getElementById('root')
+    //return <Greet to={this.state.to} 
   }
 }
 
@@ -48,32 +71,5 @@ const themeset = {
   userFontColor: '#4a4a4a',
 };
 
-const steps=[
-    {
-      id: '1',
-      message: 'Please type a number',
-      trigger: '2',
-    },
-    {
-      id: '2',
-      user: true,
-      validator: (value) => {
-        if (isNaN(value)) {
-          return 'value should be a number';
-        }
-        return true
-      },
-      message: "ok, once more..",
-      trigger: '1',
-    },
-  ]
 
-render(
-  <div>
-  <ThemeProvider theme={themeset}>
-    <ChatBot steps={steps} />
-  </ThemeProvider>
-  
-  </div>,
-  document.getElementById('root')
-);
+
