@@ -6,6 +6,19 @@ import { ThemeProvider } from 'styled-components';
 // package.json proxy value will replace this with the API URL
 const API_URL = ""
 
+//import ChatBot from '../../lib/index';
+const themeset = {
+  background: '#f5f8fb',
+  fontFamily: 'Arial',
+  headerBgColor: 'green',
+  headerFontColor: '#fff',
+  headerFontSize: '15px',
+  botBubbleColor: 'green',
+  botFontColor: '#fff',
+  userBubbleColor: '#fff',
+  userFontColor: '#4a4a4a',
+};
+
 class Greet extends Component {
   render() {
     return <div>Hello {this.props.to}</div>;
@@ -45,31 +58,13 @@ export default class App extends Component {
               message: "Hi {previousValue}",
               end: true,
             },
-          ]} />
+          ]} 
+          />
       </ThemeProvider>
   
-  </div>,
-  document.getElementById('root')
+  </div>
     //return <Greet to={this.state.to} 
   }
 }
 
 render(<App />, document.getElementById("root"));
-
-
-
-//import ChatBot from '../../lib/index';
-const themeset = {
-  background: '#f5f8fb',
-  fontFamily: 'Arial',
-  headerBgColor: 'green',
-  headerFontColor: '#fff',
-  headerFontSize: '15px',
-  botBubbleColor: 'green',
-  botFontColor: '#fff',
-  userBubbleColor: '#fff',
-  userFontColor: '#4a4a4a',
-};
-
-
-
