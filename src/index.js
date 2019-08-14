@@ -61,10 +61,6 @@ const steps = [
   },
 ];
 
-
-  
-
-
 render(
   <div>
   <ThemeProvider theme={themeset}>
