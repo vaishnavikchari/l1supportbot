@@ -39,7 +39,7 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then (res => this.setState({hasData: true, to: res.data.planet}))
-      .then (this.triggerNext)
+      .then (this.triggerNext('5'))
   }
   render() {
     //return <Greet to={this.state.to}/> 
