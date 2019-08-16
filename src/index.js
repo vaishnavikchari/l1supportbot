@@ -38,7 +38,7 @@ export default class App extends Component {
       body: JSON.stringify({ query: "{ planet }" })
     })
       .then(res => res.json())
-      .then( triggetNext() {res => this.setState({ to: res.data.planet }))};
+      .then (res => this.setState({ to: res.data.planet }));
   }
   render() {
     return <div>
