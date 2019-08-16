@@ -60,7 +60,8 @@ export default class App extends Component {
             },
             {
               id: '4',
-              message: {this.state.to},
+              component: <Greet /> ,
+              waitAction: true,
               end: true,
             },
           ]} 
