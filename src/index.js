@@ -38,8 +38,8 @@ export default class App extends Component {
       body: JSON.stringify({ query: "{ planet }" })
     })
       .then(res => res.json())
-      .then (res => this.setState({hasData: true, to: res.data.planet }))
-      .then (this.triggetNext())
+      .then (res => this.setState({hasData: true, to: res.data.planet}))
+      .then (this.triggerNext)
   }
   render() {
     //return <Greet to={this.state.to}/> 
