@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import fetch from "unfetch";
 import ChatBot, {Components} from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+
 // package.json proxy value will replace this with the API URL
 const API_URL = ""
 
@@ -60,7 +61,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Greet /> ,
+              component: <Greet to={this.state.to}/> ,
               waitAction: true,
               end: true,
             },
