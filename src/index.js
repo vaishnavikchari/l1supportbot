@@ -62,13 +62,8 @@ export default class App extends Component {
               id: '4',
               message: ({ previousValue, steps }) => 'Hello',
               trigger: ({ value, steps }) => '5',
+              end: true,
             },
-            {
-              id: '5',
-  message: 'Bye',
-  end: true,
-}  
-            
           ]} 
           />
       </ThemeProvider>
