@@ -62,9 +62,10 @@ export default class App extends Component {
             },
             {
               id: '4',
-              Component: <Greet/>,
+              component: <Greet to={this.state.to} />,
               waitAction: true,
-              end: true,
+              asMessage: true,
+              trigger: '1',
             },
           ]} 
           />
