@@ -60,8 +60,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              message: ({ previousValue, steps }) => 'Hello',
-              trigger: ({ value, steps }) => '5',
+              message: {this.state.to},
               end: true,
             },
           ]} 
