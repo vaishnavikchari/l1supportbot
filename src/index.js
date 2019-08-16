@@ -29,7 +29,7 @@ class Greet extends Component {
 export default class App extends Component {
   constructor() {
     super();
-    this.state = { to: "" }
+    this.state = {hasData: false, to: "" }
   }
   componentDidMount() {
     fetch(`${API_URL}/graphql`, {
@@ -38,7 +38,7 @@ export default class App extends Component {
       body: JSON.stringify({ query: "{ planet }" })
     })
       .then(res => res.json())
-      .then (res => this.setState({ to: res.data.planet }))
+      .then (res => this.setState({hasData: true, to: res.data.planet }))
   }
   render() {
     //return <Greet to={this.state.to}/> 
@@ -62,7 +62,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Greet />,
+              component: <Greet to={this.state.to} />,
               waitAction: true,
               asMessage: true,
               trigger: '1',
