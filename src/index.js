@@ -39,6 +39,7 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then (res => this.setState({hasData: true, to: res.data.planet }))
+      .then (this.triggetNext())
   }
   render() {
     //return <Greet to={this.state.to}/> 
@@ -65,8 +66,13 @@ export default class App extends Component {
               component: <Greet to={this.state.to} />,
               waitAction: true,
               asMessage: true,
-              trigger: '1',
+              trigger: '5',
             },
+            {
+              id: '5',
+              message: 'Done',
+              trigger: '1',
+            }  
           ]} 
           />
       </ThemeProvider>  
