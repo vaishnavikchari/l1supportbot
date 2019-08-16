@@ -38,7 +38,8 @@ export default class App extends Component {
       body: JSON.stringify({ query: "{ planet }" })
     })
       .then(res => res.json())
-      .then (res => this.setState({ to: res.data.planet }));
+      .then (res => this.setState({ to: res.data.planet }))
+      .then (this.props.triggerNextStep())
   }
   render() {
     return <div>
@@ -62,7 +63,6 @@ export default class App extends Component {
             {
               id: '4',
               component: <Greet to={this.state.to} />,
-              waitAction: true,
               end: true,
             },
           ]} 
