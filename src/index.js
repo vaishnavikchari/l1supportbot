@@ -39,10 +39,10 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then (res => this.setState({ to: res.data.planet }))
-      .then (this.props.triggerNextStep())
   }
   render() {
-    return <div>
+    //return <Greet to={this.state.to}/> 
+        return <div>
         <ThemeProvider theme={themeset}>
           <ChatBot steps={[
             {
@@ -62,15 +62,15 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Greet to={this.state.to} />,
+              message: <Greet to={this.state.to}/>,
+              waitAction: true,
               end: true,
             },
           ]} 
           />
-      </ThemeProvider>
-  
+      </ThemeProvider>  
   </div>
-    //return <Greet to={this.state.to} 
+
   }
 }
 
