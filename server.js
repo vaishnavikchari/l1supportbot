@@ -4,7 +4,6 @@ const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { makeExecutableSchema } = require("graphql-tools");
 const cors = require("cors");
 const path = require('path');
-
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.PROJECT_DOMAIN || "localhost"
 
