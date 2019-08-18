@@ -14,7 +14,7 @@ const themeset = {
   headerBgColor: '#800080',
   headerFontColor: '#fff',
   headerFontSize: '15px',
-  botBubbleColor: 'green',
+  botBubbleColor: '#800080',
   botFontColor: '#fff',
   userBubbleColor: '#fff',
   userFontColor: '#4a4a4a',
