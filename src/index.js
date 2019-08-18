@@ -11,7 +11,7 @@ const API_URL = ""
 const themeset = {
   background: '#f5f8fb',
   fontFamily: 'Arial',
-  headerBgColor: 'green',
+  headerBgColor: '#800080',
   headerFontColor: '#fff',
   headerFontSize: '15px',
   botBubbleColor: 'green',
