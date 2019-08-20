@@ -29,7 +29,7 @@ class Greet extends Component {
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {hasData: false, to: "" }
+    this.state = {hasData: false, to: "world" }
   }
   componentDidMount() {
     fetch(`${API_URL}/graphql`, {
