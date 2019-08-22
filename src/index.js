@@ -23,12 +23,21 @@ const themeset = {
 export default class App extends Component {
   constructor() {
     super();
-    state = {hasData: false, to: "world" }
+    this.state = {hasData: false, message: []}
   }  
+  
+  componentDidMount() {
+    fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
+      .then(res => res.send())
+      .then((data) => {
+        this.setState({ message: data })
+      })
+      .catch(console.log)
+    }
   render() {
         return <div>
         <ThemeProvider theme={themeset}>
-          <ChatBot steps={[
+          <ChatBot dfMsg={this.status.message[0]} steps={[
             {
               id: '1',
               message: 'What is your name?',
@@ -46,9 +55,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Greet to={this.state.to}/>,
-              waitAction: true,
-              asMessage: true,
+              message: {dfMsg}
               trigger: '5',
             },
             {
