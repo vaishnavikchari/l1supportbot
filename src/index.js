@@ -46,13 +46,15 @@ class GetDialog extends Component {
     }  
   
   triggetNext() {
-    this.setState(() => {
       this.props.triggerNextStep();
-    });
   }
     
   render() {
-    return (<div>{this.state.message} {this.triggetNext('Are you looking for a parcel? Sad')}</div>)
+    return (<div>{this.state.message} {              <button
+                onClick={() => this.triggetNext()}
+              >
+                Start Again
+              </button>}</div>)
   }
 }
 
