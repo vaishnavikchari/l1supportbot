@@ -27,7 +27,7 @@ class Messages extends Component {
   }      
   componentDidMount() {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
-      .then(res => res.send())
+      .then(res => res.json())
       .then((data) => {
         this.setState({ hasData: true, message: data })
       })
