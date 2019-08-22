@@ -41,7 +41,7 @@ class Messages extends Component {
     this.state = {message: "Default Message"}
   }      
   render() {
-    return <div>{this.props.message}</div>
+    return <div>{this.state.message}</div>
   }
 }
 
