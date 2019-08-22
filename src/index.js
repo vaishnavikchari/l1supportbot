@@ -32,10 +32,11 @@ class GetDialog extends Component {
   componentDidMount() {
     //const { steps } = this.props;
     //const {q, sessionId}  = steps;
-    //const q = steps.q.value;
-    //const sessionId = '123';
+    const q = this.props.q;
+    //const sId = '123';
     //const url = `/df?sessionId=123&q=hi`
-    fetch("/df?sessionId=123&q=hi")
+    console.log(this.props.q);
+    fetch("/df?sessionId=123&q="+q)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
