@@ -29,8 +29,8 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  componentWillUpdate() {
-    const self = this;
+  /*componentDidMount() {
+    //const self = this;
     const { steps } = this.props;
     //const {q, sessionId}  = steps;
     const q = steps.two.value;
@@ -45,8 +45,29 @@ class GetDialog extends Component {
       });
       })
       .catch(console.log)  
-    }  
+    } */ 
+  
+  componentDidMount() {
+    const { steps } = this.props;
+    const q = steps.two.value;
+    this.messageID = () => this.callAPI()
+  }
+  
+  componentWillUnmount() {
+      this.messageID
+  }
+  
+  callAPI(q) {
+        fetch("/df?sessionId=123&q="+q)
+      .then((res) => res.json())
+      .then((result) => {
+        this.setState({
+          message: result.data
+      });
+      })
+      .catch(console.log)
 
+  }
   render() {
     return (<div>{this.state.message}</div>)
   }
