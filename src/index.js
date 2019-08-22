@@ -53,7 +53,7 @@ export default class App extends Component {
           <ChatBot steps={[
             {
               id: '1',
-              component: <GetDialog />,
+              component: <GetDialog query='Hi'/>,
               waitAction: true,
               asMessage: true,
               trigger: '2',
@@ -65,7 +65,7 @@ export default class App extends Component {
             },
             {
               id: '3',
-              component: <GetDialog />,
+              component: <GetDialog query='{previousValue}'/>,
               waitAction: true,
               asMessage: true,
               trigger: '2'
