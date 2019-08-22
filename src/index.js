@@ -29,14 +29,11 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  /*componentDidMount() {
-    //const self = this;
+  componentDidMount() {
     const { steps } = this.props;
-    //const {q, sessionId}  = steps;
     const q = steps.two.value;
     //const sId = '123';
     //const url = `/df?sessionId=123&q=hi`
-    //console.log(this.props.q);
     fetch("/df?sessionId=123&q="+q)
       .then((res) => res.json())
       .then((result) => {
@@ -45,27 +42,9 @@ class GetDialog extends Component {
       });
       })
       .catch(console.log)  
-    } */ 
+    this.props.triggerNextStep();
+    }  
   
-  componentDidMount() {
-    const { steps } = this.props;
-    const q = steps.two.value;
-    this.messageID = () => this.callAPI(q);
-    //this.props.triggerNextStep();
-  }  
-  
-  callAPI(q, r) {
-    fetch("/df?sessionId=123&q="+q)
-      .then((res) => res.json())
-      .then((result) => {
-      var r = result.data  
-      this.setState({
-          message: result.data
-      });
-      })
-      .catch(console.log)
-
-  }
     
   render() {
     return (<div>{this.state.message}</div>)
