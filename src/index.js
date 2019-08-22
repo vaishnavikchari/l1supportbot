@@ -23,20 +23,18 @@ const themeset = {
 class Messages extends Component {
   constructor() {
     super();
-    this.state = {hasData: false, message: "Default message"}
+    this.state = {hasData: false, message: ""}
   }      
   componentDidMount() {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
-      .then(res => res.send())
+      .then(res => res.json())
       .then((data) => {
         this.setState({ hasData: true, message: data })
       })
       .catch(console.log)  
     }
   render() {
-    if (this.state.hasData) {
-      return (<div className="chat_window"><p>{this.state.hasData? this.state.message : null}</p></div>)
-  }
+      return (<div className="chat_window"><p>{this.state.hasData? this.state.message : "Default message"}</p></div>)
   }
 }
 
