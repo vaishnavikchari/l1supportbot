@@ -5,7 +5,7 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
 // package.json proxy value will replace this with the API URL
-const API_URL = ""
+//const API_URL = ""
 
 //import ChatBot from '../../lib/index';
 const themeset = {
@@ -26,20 +26,19 @@ const themeset = {
 class Messages extends Component {
   constructor() {
     super();
-    this.state = {message: "Default Message"}
+    this.state = {message: "..."}
   }    
   
   componentDidMount() {
     //this.setState({message: "How are you?" })
-    fetch('https://ubiquitous-swan.glitch.me/df?sessionId=123&q=hi')
-      .then(
-      (res) => res.json())
-      .then((result) => {
-        const { a } = result;
-        this.setState({
-          message: a.data
-        });
-      })
+    fetch('/df?sessionId=123&q=hi')
+      .then((res) => res.json())
+      .then(data => console.log("data.data"))
+  //    .then((result) => {
+  //      this.setState({
+  //        message: "Just chncin"
+  //      });
+  //    })
       .catch(console.log)  
     }  
 
