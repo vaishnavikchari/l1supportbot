@@ -29,9 +29,9 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  componentDidMount(query) {
+  componentDidMount(props) {
     //this.setState({message: "How are you?" })
-    fetch('/df?sessionId=123&q='+query)
+    fetch(`/df?sessionId=123&q=${encodeURIComponent(query)}`)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
