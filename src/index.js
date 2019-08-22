@@ -31,7 +31,7 @@ export default class App extends Component {
     super();
     this.state = {hasData: false, to: "" }
   }
-/*  componentDidMount() {
+  componentDidMount() {
     fetch(`${API_URL}/graphql`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -39,12 +39,12 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then (res => this.setState({hasData: true, to: res.data.planet}))
-  }*/
+  }
   render() {
     //return <Greet to={this.state.to}/> 
         return <div>
         <ThemeProvider theme={themeset}>
-          <ChatBot steps={[
+          <ChatBot to = {this.state.to} steps={[
             {
               id: '1',
               message: 'What is your name?',
@@ -62,7 +62,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Greet to={this.state.to} />,
+              component: <Greet to/>,
               waitAction: true,
               asMessage: true,
               trigger: '5',
@@ -70,7 +70,7 @@ export default class App extends Component {
             {
               id: '5',
               message: 'Done',
-              trigger: '1',
+              end: true,
             }  
           ]} 
           />
