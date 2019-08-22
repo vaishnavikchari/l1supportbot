@@ -33,6 +33,9 @@ class Messages extends Component {
       })
       .catch(console.log)  
     }
+  render() {
+    return (<div className="chat_window"><p>{this.state.message}</p></div>)
+  }
 }
 
 export default class App extends Component {
@@ -57,8 +60,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Wit_ai />,
-              replace: true,
+              component: <Messages />,
               waitAction: true,
               asMessage: true,
               trigger: '5'
