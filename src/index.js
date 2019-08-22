@@ -27,6 +27,7 @@ class GetDialog extends Component {
   constructor() {
     super();
     this.state = {message: "..."}
+    this.triggetNext = this.triggetNext.bind(this);
   }    
   
   componentDidMount() {
@@ -42,12 +43,16 @@ class GetDialog extends Component {
       });
       })
       .catch(console.log)  
-    this.props.triggerNextStep();
     }  
   
+  triggetNext() {
+    this.setState(() => {
+      this.props.triggerNextStep();
+    });
+  }
     
   render() {
-    return (<div>{this.state.message}</div>)
+    return (<div>{this.state.message} {this.triggetNext('Are you looking for a parcel? Sad')}</div>)
   }
 }
 
