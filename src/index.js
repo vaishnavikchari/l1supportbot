@@ -29,6 +29,7 @@ class Messages extends Component {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
       .then(res => res.json())
       .then((data) => {
+        console.log(data);
         this.setState({ hasData: true, message: data })
       })
       .catch(console.log)  

@@ -65,7 +65,7 @@ async function runQuery(q, res, sId) {
     const result = responses[0].queryResult;
 
     // Send Result if string.indexOf(substring) !== -1
-    res.send(result.fulfillmentMessages[0].text.text[0]);
+    res.json({data: result.fulfillmentMessages[0].text.text[0]});
   
 }
 
