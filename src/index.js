@@ -21,6 +21,10 @@ const themeset = {
 };
 
 class Messages extends Component {
+  constructor() {
+    super();
+    this.state = {hasData: false, message: "Default message"}
+  }      
   componentDidMount() {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
       .then(res => res.send())
@@ -32,14 +36,10 @@ class Messages extends Component {
 }
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {hasData: false, message: "Default message"}
-  }      
   render() {
         return <div>
         <ThemeProvider theme={themeset}>
-          <ChatBot dfMsg={this.status.message[0]} steps={[
+          <ChatBot steps={[
             {
               id: '1',
               message: 'What is your name?',
