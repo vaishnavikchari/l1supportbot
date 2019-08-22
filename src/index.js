@@ -21,15 +21,6 @@ const themeset = {
 };
 
 /*
-    fetch('https://ubiquitous-swan.glitch.me/df?sessionId=123&q=hi')
-      .then((res) => res.json())
-      .then((result) => {
-      .then((data) => {
-        console.log(data);
-        this.setState({message: data })
-      })
-      .catch(console.log)  
-    }
 */
 
 class Messages extends Component {
@@ -39,10 +30,18 @@ class Messages extends Component {
   }    
   
   componentDidMount() {
-    //this.Message = () => this.DialogMessage()
-    this.setState({message: "How are you?" })
-  }
-  
+    //this.setState({message: "How are you?" })
+    fetch('https://ubiquitous-swan.glitch.me/df?sessionId=123&q=hi')
+      .then(
+      (res) => res.json())
+      .then((result) => {
+        const { a } = result;
+        this.setState({
+          message: a.data
+        });
+      })
+      .catch(console.log)  
+    }  
 
   render() {
     return (<div>{this.state.message}</div>)
