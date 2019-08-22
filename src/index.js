@@ -25,7 +25,7 @@ class Messages extends Component {
     super();
     this.state = {hasData: false, message: ""}
   }      
-  componentDidUpdate(){
+  dfMessage(){
     fetch('https://ubiquitous-swan.glitch.me/df?sessionId=123&q=hi')
       .then((res) => {
       console.log(res);
