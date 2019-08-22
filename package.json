@@ -30,7 +30,7 @@
     "flatted": "^2.0.1",
     "prop-types": "^15.7.2",
     "random-id": "^1.0.3",
-    "dialogflow": "^4.0.3"
+    "dialogflow": "0.6.0"
   },
   "scripts": {
     "start": "react-scripts build && node server.js",

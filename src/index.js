@@ -20,38 +20,12 @@ const themeset = {
   userFontColor: '#4a4a4a',
 };
 
-class Greet extends Component {
-  render() {
-    return <div>Hello {this.props.to}</div>;
-  }
-}
-
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {hasData: false, to: "world" }
-  }
-  /*componentDidMount() { 
-    this.handleQuery = this.handleQuery.bind(this);
-  }
-  handleQuery() {
-    fetch(`${API_URL}/graphql`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ Query: "{ planet }" })
-    })
-      .then(res => res.json())
-      .then (res => this.setState({hasData: true, to: res.data.planet}))
-  }
-  handleCondition() {
-    if (this.state.hasData) {
-      return this.state.to
-    }
-  }*/
-  
-  
+    state = {hasData: false, to: "world" }
+  }  
   render() {
-    //return <Greet to={this.state.to}/> 
         return <div>
         <ThemeProvider theme={themeset}>
           <ChatBot steps={[

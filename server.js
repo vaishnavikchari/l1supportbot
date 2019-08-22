@@ -69,45 +69,6 @@ async function runQuery(q, res, sId) {
   
 }
 
-
-// GraphQL type definition
-// Query type has a top level field called planet, which is of type String
-/*const typeDefs = `
-  type Query { planet: String }
-`;
-
-// Resolvers map GraphQL types (like planet) to functions
-// Every time a consumer asks for the planet key, we will return the string "globe"
-const resolvers = {
-  Query: {
-    planet: () => {
-      return "globe";
-    }
-  }
-};
-
-// Create a schema based on type definitions and resolvers
-const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers
-});*/
-
-/*server.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});*/
-
-// Connect schema to an HTTP server, in the route /graphql
-/*server.use("/graphql", bodyParser.json(), graphqlExpress({ schema }));
-
-// Provide an interactive GraphQL explorer called GraphiQL in the /graphiql route
-server.use(
-  "/graphiql",
-  graphiqlExpress({
-    endpointURL: "/graphql"
-  })
-);*/
-
-
 server.listen(PORT, () => {
   console.log(`Go to http://${HOST}:${PORT}/ to run queries!`);
 });
