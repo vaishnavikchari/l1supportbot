@@ -30,8 +30,8 @@ server.use(function(req, res, next) {
 
 
 server.get("/df", (req, res, next) => {
-    var q = req.query.q,
-    session = req.query.sessionId;
+    var q = decodeURI(req.query.q),
+    session = decodeURI(req.query.sessionId);
     
     runQuery(q, res, session);
 });
