@@ -29,13 +29,13 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  componentDidMount(props) {
-    const { steps } = this.props;
+  componentDidMount() {
+    //const { steps } = this.props;
     //const {q, sessionId}  = steps;
-    const q = steps.q.value;
-    const sessionId = steps.sessionId.value;
-    const url = `/df?sessionId=${encodeURIComponent(sessionId)}&q=${encodeURIComponent(q)}`
-    fetch(url)
+    //const q = steps.q.value;
+    //const sessionId = '123';
+    //const url = `/df?sessionId=123&q=hi`
+    fetch("/df?sessionId=123&q=hi")
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -67,7 +67,7 @@ export default class App extends Component {
             },
             {
               id: '3',
-              component: <GetDialog >,
+              component: <GetDialog q='{previousValue}'/>,
               waitAction: true,
               asMessage: true,
               trigger: '2'
