@@ -23,15 +23,15 @@ const themeset = {
 /*
 */
 
-class Messages extends Component {
+class GetDialog extends Component {
   constructor() {
     super();
     this.state = {message: "..."}
   }    
   
-  componentDidMount() {
+  componentDidMount(query) {
     //this.setState({message: "How are you?" })
-    fetch('/df?sessionId=123&q=hi')
+    fetch('/df?sessionId=123&q='+query)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -53,7 +53,9 @@ export default class App extends Component {
           <ChatBot steps={[
             {
               id: '1',
-              message: 'What is your name?',
+              component: <GetDialog />,
+              waitAction: true,
+              asMessage: true,
               trigger: '2',
             },
             {
