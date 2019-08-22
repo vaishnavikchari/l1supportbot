@@ -31,7 +31,10 @@ export default class App extends Component {
     super();
     this.state = {hasData: false, to: "" }
   }
-  componentDidMount() {
+  componentDidMount() { 
+    this.handleQuery = this.handleQuery.bind(this);
+  }
+  handleQuery() {
     fetch(`${API_URL}/graphql`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -40,6 +43,13 @@ export default class App extends Component {
       .then(res => res.json())
       .then (res => this.setState({hasData: true, to: res.data.planet}))
   }
+  handleCondition() {
+    if (this.state.hasData) {
+      return this.state.to
+    }
+  }
+  
+  
   render() {
     //return <Greet to={this.state.to}/> 
         return <div>
