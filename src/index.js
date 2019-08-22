@@ -33,12 +33,11 @@ class Messages extends Component {
     //this.setState({message: "How are you?" })
     fetch('/df?sessionId=123&q=hi')
       .then((res) => res.json())
-      .then(data => console.log("data.data"))
-  //    .then((result) => {
-  //      this.setState({
-  //        message: "Just chncin"
-  //      });
-  //    })
+      .then((result) => {
+        this.setState({
+          message: result.data
+      });
+      })
       .catch(console.log)  
     }  
 
