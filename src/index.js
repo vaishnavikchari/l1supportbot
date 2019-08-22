@@ -27,14 +27,16 @@ class Messages extends Component {
   }      
   componentDidMount() {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
-      .then(res => res.json())
+      .then(res => res.send())
       .then((data) => {
         this.setState({ hasData: true, message: data })
       })
       .catch(console.log)  
     }
   render() {
-    return (<div className="chat_window"><p>{this.state.message}</p></div>)
+    if (this.state.hasData) {
+      return (<div className="chat_window"><p>{this.state.hasData? this.state.message : null}</p></div>)
+  }
   }
 }
 
