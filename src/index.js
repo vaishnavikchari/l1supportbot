@@ -29,10 +29,11 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  componentDidMount(q) {
-    //const { steps } = this.props;
+  componentWillUpdate() {
+    const self = this;
+    const { steps } = this.props;
     //const {q, sessionId}  = steps;
-    //const q = this.props.q;
+    const q = steps.two.value;
     //const sId = '123';
     //const url = `/df?sessionId=123&q=hi`
     //console.log(this.props.q);
@@ -57,21 +58,21 @@ export default class App extends Component {
         <ThemeProvider theme={themeset}>
           <ChatBot steps={[
             {
-              id: '1',
+              id: 'one',
               message: 'Hi, Lets chat now',
-              trigger: '2'
+              trigger: 'two'
             },
             {
-              id: '2',
+              id: 'two',
               user: true,
-              trigger: '3',
+              trigger: 'three',
             },
             {
-              id: '3',
-              component: <GetDialog '{previousValue}'/>,
+              id: 'three',
+              component: <GetDialog/>,
               waitAction: true,
               asMessage: true,
-              trigger: '2'
+              trigger: 'two'
             }
           ]} 
           />
