@@ -57,8 +57,11 @@ export default class App extends Component {
             },
             {
               id: '4',
-              message: {dfMsg}
-              trigger: '5',
+              component: <Wit_ai />,
+              replace: true,
+              waitAction: true,
+              asMessage: true,
+              trigger: '5'
             },
             {
               id: '5',
