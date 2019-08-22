@@ -21,7 +21,18 @@ const themeset = {
 };
 
 /*
-DialogMessage(){
+
+*/
+
+class Messages extends Component {
+  constructor() {
+    super();
+    this.state = {message: "Default Message"}
+  }    
+  componentDidMount() {
+    
+  }
+  DialogMessage(){
     fetch('https://ubiquitous-swan.glitch.me/df?sessionId=123&q=hi')
       .then((res) => {
       console.log(res);
@@ -33,13 +44,6 @@ DialogMessage(){
       })
       .catch(console.log)  
     }
-*/
-
-class Messages extends Component {
-  constructor() {
-    super();
-    this.state = {message: "Default Message"}
-  }      
   render() {
     return <div>{this.state.message}</div>
   }
