@@ -29,9 +29,9 @@ class Greet extends Component {
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {hasData: false, to: "" }
+    this.state = {hasData: false, to: "world" }
   }
-  componentDidMount() { 
+  /*componentDidMount() { 
     this.handleQuery = this.handleQuery.bind(this);
   }
   handleQuery() {
@@ -47,14 +47,14 @@ export default class App extends Component {
     if (this.state.hasData) {
       return this.state.to
     }
-  }
+  }*/
   
   
   render() {
     //return <Greet to={this.state.to}/> 
         return <div>
         <ThemeProvider theme={themeset}>
-          <ChatBot to = {this.state.to} steps={[
+          <ChatBot steps={[
             {
               id: '1',
               message: 'What is your name?',
@@ -72,7 +72,7 @@ export default class App extends Component {
             },
             {
               id: '4',
-              component: <Greet to/>,
+              component: <Greet to={this.state.to}/>,
               waitAction: true,
               asMessage: true,
               trigger: '5',
