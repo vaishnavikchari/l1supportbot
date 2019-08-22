@@ -29,8 +29,11 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  componentDidMount(props) {
-    const url = `/df?sessionId=${encodeURIComponent(props.sessionId)}&q=${encodeURIComponent(props.q)}`
+  componentWillMount(props) {
+    const { steps } = this.props;
+    const q = steps.q.value;
+    const sessionId = steps.sessionId.value;
+    const url = `/df?sessionId=${encodeURIComponent(sessionId)}&q=${encodeURIComponent(q)}`
     fetch(url)
       .then((res) => res.json())
       .then((result) => {
