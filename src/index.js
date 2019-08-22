@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { render } from "react-dom";
 import fetch from "unfetch";
-import ChatBot, {Components} from 'react-simple-chatbot';
+import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
 // package.json proxy value will replace this with the API URL
@@ -27,7 +27,10 @@ class Messages extends Component {
   }      
   componentDidMount() {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
-      .then(res => res.json())
+      .then((res) => {
+      console.log(res);
+      return res.json();
+      })
       .then((data) => {
         console.log(data);
         this.setState({ hasData: true, message: data })
