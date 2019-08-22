@@ -31,7 +31,7 @@ class GetDialog extends Component {
   
   componentDidMount(props) {
     //this.setState({message: "How are you?" })
-    fetch(`/df?sessionId=123&q=${encodeURIComponent(query)}`)
+    fetch(`/df?sessionId=123&q=${encodeURIComponent(props.query)}`)
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -65,21 +65,11 @@ export default class App extends Component {
             },
             {
               id: '3',
-              message: "Hi {previousValue}",
-              trigger: '4',
-            },
-            {
-              id: '4',
-              component: <Messages />,
+              component: <GetDialog />,
               waitAction: true,
               asMessage: true,
-              trigger: '5'
-            },
-            {
-              id: '5',
-              message: 'Done',
-              end: true,
-            }  
+              trigger: '2'
+            }
           ]} 
           />
       </ThemeProvider>  
