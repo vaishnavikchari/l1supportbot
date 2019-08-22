@@ -29,17 +29,17 @@ class Greet extends Component {
 export default class App extends Component {
   constructor() {
     super();
-    this.state = {hasData: false, to: "world" }
+    this.state = {hasData: false, to: "" }
   }
-  componentDidMount() {
+/*  componentDidMount() {
     fetch(`${API_URL}/graphql`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: "{ planet }" })
+      body: JSON.stringify({ Query: "{ planet }" })
     })
       .then(res => res.json())
       .then (res => this.setState({hasData: true, to: res.data.planet}))
-  }
+  }*/
   render() {
     //return <Greet to={this.state.to}/> 
         return <div>
