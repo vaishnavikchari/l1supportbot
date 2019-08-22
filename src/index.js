@@ -20,12 +20,8 @@ const themeset = {
   userFontColor: '#4a4a4a',
 };
 
-class Messages extends Component {
-  constructor() {
-    super();
-    this.state = {hasData: false, message: ""}
-  }      
-  dfMessage(){
+/*
+DialogMessage(){
     fetch('https://ubiquitous-swan.glitch.me/df?sessionId=123&q=hi')
       .then((res) => {
       console.log(res);
@@ -37,8 +33,15 @@ class Messages extends Component {
       })
       .catch(console.log)  
     }
+*/
+
+class Messages extends Component {
+  constructor() {
+    super();
+    this.state = {message: "Default Message"}
+  }      
   render() {
-      return (<div className="chat_window"><p>{this.state.hasData? this.state.message : "Default message"}</p></div>)
+    return <div>{this.props.message}</div>
   }
 }
 
