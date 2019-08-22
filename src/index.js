@@ -50,24 +50,23 @@ class GetDialog extends Component {
   componentDidMount() {
     const { steps } = this.props;
     const q = steps.two.value;
-    this.messageID = () => this.callAPI()
-  }
+    this.messageID = () => this.callAPI(q);
+    //this.props.triggerNextStep();
+  }  
   
-  componentWillUnmount() {
-      this.messageID
-  }
-  
-  callAPI(q) {
-        fetch("/df?sessionId=123&q="+q)
+  callAPI(q, r) {
+    fetch("/df?sessionId=123&q="+q)
       .then((res) => res.json())
       .then((result) => {
-        this.setState({
+      var r = result.data  
+      this.setState({
           message: result.data
       });
       })
       .catch(console.log)
 
   }
+    
   render() {
     return (<div>{this.state.message}</div>)
   }
