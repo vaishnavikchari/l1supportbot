@@ -20,20 +20,22 @@ const themeset = {
   userFontColor: '#4a4a4a',
 };
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {hasData: false, message: []}
-  }  
-  
+class Messages extends Component {
   componentDidMount() {
     fetch('https://ubiquitous-swan.glitch.me/df?q=hi&sessionId=123')
       .then(res => res.send())
       .then((data) => {
-        this.setState({ message: data })
+        this.setState({ hasData: true, message: data })
       })
-      .catch(console.log)
+      .catch(console.log)  
     }
+}
+
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {hasData: false, message: "Default message"}
+  }      
   render() {
         return <div>
         <ThemeProvider theme={themeset}>
