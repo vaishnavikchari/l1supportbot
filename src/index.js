@@ -29,10 +29,10 @@ class GetDialog extends Component {
     this.state = {message: "..."}
   }    
   
-  componentWillMount(props) {
-    const { steps } = this.props;
-    const q = steps.q.value;
-    const sessionId = steps.sessionId.value;
+  componentDidMount(props) {
+    const { step } = this.props;
+    const q = step.q.value;
+    const sessionId = step.sessionId.value;
     const url = `/df?sessionId=${encodeURIComponent(sessionId)}&q=${encodeURIComponent(q)}`
     fetch(url)
       .then((res) => res.json())
@@ -56,9 +56,7 @@ export default class App extends Component {
           <ChatBot steps={[
             {
               id: '1',
-              component: <GetDialog />,
-              waitAction: true,
-              asMessage: true,
+              message: 'Hi! Come on in. Let us chat, now',
               trigger: '2',
             },
             {
