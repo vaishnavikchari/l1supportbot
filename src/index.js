@@ -10,7 +10,7 @@ import styled from 'styled-components';
 //import ChatBot from '../../lib/index';
 const themeset = {
   background: '#f5f8fb',
-  fontFamily: 'Arial',
+  fontFamily: 'Verdana',
   headerBgColor: '#8D33FF',
   headerFontColor: '#fff',
   headerFontSize: '15px',
@@ -72,12 +72,19 @@ width: 450px;
 @media only screen and (max-width: 450px) {
       width: 100%;
 }
- 
+`;
+const Title = styled.h1`
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: lighter;
+  text-align: center;
+  color: #8D33FF;
 `;
 export default class App extends Component {
   render() {
-        return (<Div>
-        <Container>    
+        return (<Div>    
+        <Container>  
+          <Title>Chat with Ecobot</Title>
         <ThemeProvider theme={themeset}>
           <ChatBot width={"450px"} steps={[
             {
