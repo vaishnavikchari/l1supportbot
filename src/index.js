@@ -68,7 +68,7 @@ const Div = styled.div`
   justify-content: center;
 `;
 const Container = styled.div`
-  width: 100%;
+  width: 350px;
   height: auto;
 `;
 export default class App extends Component {
