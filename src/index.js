@@ -50,11 +50,12 @@ class GetDialog extends Component {
   }
     
   render() {
-    return (<div>{this.state.message} {              <button
-                onClick={() => this.triggetNext()}
-              >
-                Start Again
-              </button>}</div>)
+    return (<div>{this.state.message} {this.triggetNext()}</div>)
+    /*
+    {<button onClick={() => this.triggetNext()}>
+      Start Again
+    </button>}
+    */
   }
 }
 
@@ -77,6 +78,7 @@ export default class App extends Component {
               id: 'three',
               component: <GetDialog/>,
               waitAction: true,
+              delay: 2000,
               asMessage: true,
               trigger: 'two'
             }
