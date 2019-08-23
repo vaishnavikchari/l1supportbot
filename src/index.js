@@ -64,8 +64,6 @@ export default class App extends Component {
   render() {
         return <div>
         <ThemeProvider theme={themeset}>
-          <div style="padding: 10%">
-            <h1>Ecobot, the eco-friendly chatbot</h1>
           <ChatBot steps={[
             {
               id: 'one',
@@ -87,8 +85,8 @@ export default class App extends Component {
             }
           ]} 
           />
-          </div>
-      </ThemeProvider>  
+      </ThemeProvider> 
+          
   </div>
 
   }
