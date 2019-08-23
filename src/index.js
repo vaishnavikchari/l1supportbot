@@ -61,6 +61,9 @@ class GetDialog extends Component {
 }
 
 //Styling page using styled-components
+const Body = styled.body`
+  background: papayawhip;
+`;
 const Div = styled.div`
   display: flex;
   height: device-height;
@@ -76,17 +79,17 @@ width: 450px;
 const Title = styled.h1`
   font-family: Verdana, Arial, sans-serif;
   font-size: 1.5em;
-  font-weight: lighter;
   text-align: center;
   color: #8D33FF;
+  text-align: left;
 `;
 export default class App extends Component {
   render() {
-        return (<Div>    
+        return (<Div> <Body>   
         <Container>  
           <Title>Chat with Ecobot</Title>
         <ThemeProvider theme={themeset}>
-          <ChatBot width={"450px"} steps={[
+          <ChatBot headerTitle={"Ecobot"} width={"450px"} steps={[
             {
               id: 'one',
               message: 'Hi, I am Ecobot. Ask me something',
@@ -108,7 +111,8 @@ export default class App extends Component {
           ]} 
           />
       </ThemeProvider> 
-            </Container>     
+            </Container>
+            </Body>
   </Div>)
 
   }
