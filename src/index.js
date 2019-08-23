@@ -61,9 +61,7 @@ class GetDialog extends Component {
 }
 
 //Styling page using styled-components
-const Body = styled.body`
-  background: papayawhip;
-`;
+
 const Div = styled.div`
   display: flex;
   height: device-height;
@@ -85,7 +83,7 @@ const Title = styled.h1`
 `;
 export default class App extends Component {
   render() {
-        return (<Div> <Body>   
+        return (<Div> 
         <Container>  
           <Title>Chat with Ecobot</Title>
         <ThemeProvider theme={themeset}>
@@ -112,7 +110,6 @@ export default class App extends Component {
           />
       </ThemeProvider> 
             </Container>
-            </Body>
   </Div>)
 
   }
