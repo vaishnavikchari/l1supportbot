@@ -68,20 +68,20 @@ const Div = styled.div`
   justify-content: center;
 `;
 const Container = styled.div`
-  width: 450px;
-  @media only screen and (max-width: 450px) {
-  body {
-    width: 100%;
-  }
-
-  height: auto;
+width: 450px;
+height: 600px;
+@media only screen and (max-width: 450px) {
+      width: 100%;
+      height: 100%;
+}
+ 
 `;
 export default class App extends Component {
   render() {
         return (<Div>
         <Container>    
         <ThemeProvider theme={themeset}>
-          <ChatBot steps={[
+          <ChatBot width={"450px"} steps={[
             {
               id: 'one',
               message: 'Hi, I am Ecobot. Ask me something',
