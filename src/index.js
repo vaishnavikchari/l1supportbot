@@ -64,7 +64,7 @@ class GetDialog extends Component {
 
 const Div = styled.div`
   display: flex;
-  height: device-height;
+  height: 100%;
   align-items: center;
   justify-content: center;
 `;
@@ -110,8 +110,7 @@ export default class App extends Component {
           />
       </ThemeProvider> 
             </Container>
-  </Div>)
-
+            </Div>)
   }
 }
 
