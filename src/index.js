@@ -62,7 +62,7 @@ class GetDialog extends Component {
 
 export default class App extends Component {
   render() {
-        return <div>
+        return <div style={{ marginWidth: '10%' }}>
         <ThemeProvider theme={themeset}>
           <ChatBot steps={[
             {
