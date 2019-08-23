@@ -42,7 +42,8 @@ class GetDialog extends Component {
           message: result.data
       });
       })
-      .catch(console.log)  
+      .catch(console.log) 
+    this.triggetNext()
     }  
   
   triggetNext() {
@@ -50,7 +51,7 @@ class GetDialog extends Component {
   }
     
   render() {
-    return (<div>{this.state.message} {this.triggetNext()}</div>)
+    return (<div>{this.state.message}</div>)
     /*
     {<button onClick={() => this.triggetNext()}>
       Start Again
