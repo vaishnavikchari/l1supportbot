@@ -60,12 +60,15 @@ class GetDialog extends Component {
   }
 }
 
+//Styling page using styled-components
+const Div = styled.div`
+  padding: 4em;
+  background: papayawhip;
+`;
+
 export default class App extends Component {
-  const Div = styled.div`
-  background: blue;
-  `;
   render() {
-        return <div style={{ marginWidth: '10%' }}>
+        return (<Div>
         <ThemeProvider theme={themeset}>
           <ChatBot steps={[
             {
@@ -90,7 +93,7 @@ export default class App extends Component {
           />
       </ThemeProvider> 
           
-  </div>
+  </Div>)
 
   }
 }
