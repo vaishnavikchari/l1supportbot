@@ -14,7 +14,7 @@ server.use(cors());
 
 //static file on default path
 server.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/public/temp.html'));
+  res.sendFile(path.join(__dirname, '/README.md'));
 });
 
 // https://dev.to/loujaybee/using-create-react-app-with-express

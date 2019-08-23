@@ -69,6 +69,7 @@ const Div = styled.div`
 `;
 const Container = styled.div`
   width: 350px;
+  height: auto;
 `;
 export default class App extends Component {
   render() {
@@ -78,7 +79,7 @@ export default class App extends Component {
           <ChatBot steps={[
             {
               id: 'one',
-              message: 'Hi, Lets chat now',
+              message: 'Hi, I am Ecobot. Ask me something',
               trigger: 'two'
             },
             {
