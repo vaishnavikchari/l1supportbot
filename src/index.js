@@ -20,9 +20,6 @@ const themeset = {
   userFontColor: '#4a4a4a',
 };
 
-/*
-*/
-
 class GetDialog extends Component {
   constructor() {
     super();
