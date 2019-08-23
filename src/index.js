@@ -63,7 +63,9 @@ class GetDialog extends Component {
 //Styling page using styled-components
 const Div = styled.div`
   display: flex;
+  height: 100%;
   align-items: center;
+  justify-content: center;
 `;
 const Container = styled.div`
   width: 350px;
