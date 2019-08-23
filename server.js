@@ -12,9 +12,15 @@ const server = express();
 
 server.use(cors());
 
+//static file on default path
+server.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, '/public/temp.html'));
+});
+
 // https://dev.to/loujaybee/using-create-react-app-with-express
 server.use(express.static(path.join(__dirname, 'build')));
 
+//chat app
 server.get('/chat', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
