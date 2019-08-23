@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import fetch from "unfetch";
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-
+import styled from 'styled-components';
 // package.json proxy value will replace this with the API URL
 //const API_URL = ""
 
@@ -61,6 +61,9 @@ class GetDialog extends Component {
 }
 
 export default class App extends Component {
+  const Div = styled.div`
+  background: blue;
+  `;
   render() {
         return <div style={{ marginWidth: '10%' }}>
         <ThemeProvider theme={themeset}>
