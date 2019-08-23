@@ -11,10 +11,10 @@ import styled from 'styled-components';
 const themeset = {
   background: '#f5f8fb',
   fontFamily: 'Arial',
-  headerBgColor: '#800080',
+  headerBgColor: '#8D33FF',
   headerFontColor: '#fff',
   headerFontSize: '15px',
-  botBubbleColor: '#800080',
+  botBubbleColor: '#8D33FF',
   botFontColor: '#fff',
   userBubbleColor: '#fff',
   userFontColor: '#4a4a4a',
@@ -62,13 +62,16 @@ class GetDialog extends Component {
 
 //Styling page using styled-components
 const Div = styled.div`
-  padding: 4em;
-  background: papayawhip;
+  display: flex;
+  align-items: center;
 `;
-
+const Container = styled.div`
+  width: 350px;
+`;
 export default class App extends Component {
   render() {
         return (<Div>
+        <Container>    
         <ThemeProvider theme={themeset}>
           <ChatBot steps={[
             {
@@ -92,7 +95,7 @@ export default class App extends Component {
           ]} 
           />
       </ThemeProvider> 
-          
+            </Container>     
   </Div>)
 
   }
