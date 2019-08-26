@@ -5,5 +5,4 @@
 * React Simple Chatbot by Lucas Bassetti https://github.com/LucasBassetti/react-simple-chatbot
 
 ## Caveats
-
-In development, it takes too long to live reload. This is because we build the frontend every time there is a change.
+In development, it takes long to live reload. This is because we build the frontend every time there is a change.
