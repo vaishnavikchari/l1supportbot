@@ -1,6 +1,6 @@
 # React chatbot for Dialogflow
 
-* Frontend bootstrapped with Create React App in /
+* Frontend bootstrapped with Create React App in /chat
 * Node, Express API
 * React Simple Chatbot by Lucas Bassetti https://github.com/LucasBassetti/react-simple-chatbot
 
