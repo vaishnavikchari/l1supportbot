@@ -4,6 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "homepage": "https://earthenpot.org/faq-chatbot/",
   "dependencies": {
     "apollo-server-express": "^1.3.6",
     "body-parser": "^1.18.2",
