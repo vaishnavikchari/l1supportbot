@@ -82,7 +82,6 @@ export default class App extends Component {
   render() {
         return (<Div> 
         <Container>  
-          <Title>Chat with Ecobot</Title>
         <ThemeProvider theme={themeset}>
           <ChatBot headerTitle={"Ecobot"} width={"450px"} steps={[
             {
