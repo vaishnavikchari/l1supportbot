@@ -4,6 +4,7 @@ import fetch from "unfetch";
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
+import ReactHtmlParser from 'react-html-parser';
 // package.json proxy value will replace this with the API URL
 //const API_URL = ""
 
@@ -48,7 +49,7 @@ class GetDialog extends Component {
   }
     
   render() {
-    return (<div>{this.state.message}</div>)
+    return (<div>{ReactHtmlParser(this.state.message)}</div>)
     /*
     {<button onClick={() => this.triggetNext()}>
       Start Again
