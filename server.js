@@ -9,12 +9,16 @@ const HOST = process.env.PROJECT_DOMAIN || "localhost"
 const dialogflow = require('dialogflow');
 
 const server = express();
+var keepAlive = require("node-keepalive");
+keepAlive({}, server);
+var cronLink = require("node-cron-link");
+cronLink("https://tidy-prosecution.glitch.me/keepalive", {time: 2, kickStart: true});
 
 server.use(cors());
 
 //static file on default path
 server.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'README.md'));
 });
 
 // https://dev.to/loujaybee/using-create-react-app-with-express
