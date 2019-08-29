@@ -87,7 +87,7 @@ export default class App extends Component {
           <ChatBot headerTitle={"Ecobot"} width={"450px"} steps={[
             {
               id: 'one',
-              message: 'Hi, I am Ecobot. Ask me about our business, products, community and gift ideas',
+              message: 'Hi, I am Ecobot. Ask me about our business, products, community, plastic alternatives and gift ideas',
               trigger: 'two'
             },
             {
